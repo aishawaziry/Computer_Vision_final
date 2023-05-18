@@ -1,0 +1,492 @@
+.ts4-dex,
+.face-detection-dex {
+    position: absolute;
+    z-index: 1000000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background: rgba(0, 1, 0, 0.5);
+    width: 760px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    display: none;
+}
+
+.ts4-dex.active,
+.face-detection-dex.active {
+    display: flex;
+    opacity: 1;
+}
+
+.ts4-dex .ts4-bar span,
+.face-detection-dex .ts5-bar span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    color: #24b5ff;
+}
+
+.ts4-dex .ts4-bar span:hover,
+.face-detection-dex .ts5-bar span:hover {
+    background: #24b5ff;
+    color: #fff;
+}
+
+.ts4-dex .ts4-bar img,
+.face-detection-dex .ts5-bar img {
+    height: 70px;
+}
+
+.ts4-dex .ts4-try-btn,
+.face-detection-dex .ts5-try-btn {
+    position: relative;
+    padding: 15px;
+    border: #24b5ff 1px solid;
+    width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+
+.ts4-dex h1,
+.face-detection-dex h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+.ts4-dex h1 span,
+.face-detection-dex h1 span {
+    font-size: 16px;
+}
+
+.ts4-dex h1 img,
+.face-detection-dex h1 img {
+    width: 200px;
+}
+
+.ts4-dex p,
+.face-detection-dex p {
+    width: 90%;
+}
+
+.ts4-dex .ts4-try-btn span,
+.face-detection-dex .ts5-try-btn span {
+    color: #24b5ff;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+}
+
+.ts4-dex .ts4-try-btn::before,
+.face-detection-dex .ts5-try-btn::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #24b5ff;
+    top: 0;
+    left: -100%;
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.ts4-dex .ts4-try-btn:hover,
+.face-detection-dex .ts5-try-btn:hover {
+    border: 1px solid transparent;
+}
+
+.ts4-dex .ts4-try-btn:hover span,
+.face-detection-dex .ts5-try-btn:hover span {
+    color: #fff;
+}
+
+.ts4-dex .ts4-try-btn:hover::before,
+.face-detection-dex .ts5-try-btn:hover::before {
+    left: 0;
+}
+
+/* Operating Window */
+.ts4-op-window,
+.ts5-op-window,
+.ts5-fd-window,
+.roc-com_matrix-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 1, 0, 0.5);
+    width: 700px;
+    transition: 0.2s ease-in-out;
+    display: none;
+    height: 500px;
+}
+
+.ts4-op-window.sp {
+    height: 570px;
+}
+
+.ts4-op-window.active,
+.ts5-op-window.active,
+.ts5-fd-window.active,
+.roc-com_matrix-cont.active {
+    display: block;
+}
+
+.ts4-op-window .ts4-op-tab,
+.ts5-op-window .ts5-op-tab,
+.ts5-fd-window .ts5-fd-tab,
+.ts5-roc-tab {
+    display: flex;
+    justify-content: center;
+    padding: 20px 30px;
+    align-items: center;
+    position: relative;
+}
+
+.ts4-op-window .ts4-op-tab img,
+.ts5-op-window .ts5-op-tab img,
+.ts5-fd-window .ts5-fd-tab img,
+.ts5-roc-tab img {
+    height: 50px;
+}
+
+.ts4-op-window .ts4-op-tab span,
+.ts5-op-window .ts5-op-tab span,
+.ts5-fd-window .ts5-fd-tab span,
+.ts5-roc-tab span {
+    position: absolute;
+    font-size: 25px;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: 0.5s ease-in-out all;
+    color: #24b5ff;
+}
+
+.ts4-op-window .ts4-op-tab span:hover,
+.ts5-op-window .ts5-op-tab span:hover,
+.ts5-fd-window .ts5-fd-tab span:hover,
+.ts5-roc-tab span:hover {
+    background: #24b5ff;
+    color: #fff;
+}
+
+.ts4-op-window .ts4-op-container {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    height: 420px;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace img.active {
+    display: block;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace p span:first-child {
+    font-size: 70px;
+    color: #24b5ff;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace p span:last-child {
+    text-transform: uppercase;
+    color: #24b5ff;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-img-rmv-btn,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-upld-btn,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-dnld-btn {
+    position: absolute;
+    transition: 0.5s ease-in-out all;
+    cursor: pointer;
+    display: none;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-img-rmv-btn {
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: #24b5ff;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-upld-btn,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-dnld-btn {
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    padding: 10px;
+    color: #24b5ff;
+    display: none;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-upld-btn.active,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-dnld-btn.active,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-img-rmv-btn.active {
+    display: block;
+}
+
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-upld-btn:hover,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-dnld-btn:hover,
+.ts4-op-window .ts4-op-container .ts4-workspace .ts4-img-rmv-btn:hover {
+    color: #fff;
+    background: #24b5ff;
+}
+
+.ts4-op-window .ts4-op-container .ts4-panel {
+    width: 300px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.ts4-op-window .ts4-op-container .ts4-panel.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 180px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.ts4-main-panel::-webkit-scrollbar {
+    background: none;
+    width: 5px;
+}
+
+.ts4-main-panel::-webkit-scrollbar-thumb {
+    background: #24b5ff;
+}
+
+.thr-types-opt p,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p {
+    width: calc(100% / 3);
+    height: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    border: transparent solid 1px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s ease-in-out all;
+}
+
+.thr-types-opt p span,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p span {
+    color: #24b5ff;
+    transition: 0.5s ease-in-out all;
+}
+
+.thr-types-opt p.active,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p.active {
+    background: #24b5ff;
+}
+
+.thr-types-opt p.active span,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p.active span {
+    color: #fff;
+}
+
+.thr-types-opt p.active:hover span,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p.active:hover span {
+    color: #fff;
+}
+
+.thr-types-opt p:hover,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p:hover {
+    border: #24b5ff solid 1px;
+}
+
+.thr-types-opt p span:first-child,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p span:first-child {
+    font-size: 35px;
+}
+
+.thr-types-opt p span:last-child,
+.ts4-op-window .ts4-op-container .ts4-panel .ts4-main-panel p span:last-child {
+    font-size: 10px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.ts4-more-opt-panel {
+    margin-top: 20px;
+    padding-top: 5px;
+    border-top: rgba(36, 181, 255, 0.4) 0.5px solid;
+}
+
+.ts4-more-opt-panel h3 {
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+    align-items: center;
+}
+
+.ts4-more-opt-panel h3 span {
+    color: #24b5ff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.ts4-more-opt-panel .var-panel {
+    display: flex;
+    position: relative;
+}
+
+.ts4-more-opt-panel .var-panel .ts4-in {
+    width: 50%;
+    position: relative;
+    margin-top: 20px;
+}
+
+.ts4-more-opt-panel .var-panel .ts4-in:last-child:before {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 25px;
+    background: #24b5ff;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+.ts4-more-opt-panel .var-panel .ts4-in input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: rgba(0, 1, 0, 0.5);
+    height: 50px;
+    padding: 5px;
+    padding-left: 20px;
+    color: #24b5ff;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.ts4-more-opt-panel .var-panel .ts4-in label {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 11px;
+    top: -7px;
+    left: 10px;
+    font-weight: 400;
+    color: #24b5ff;
+}
+
+.ts4-more-opt-panel .var-panel .ts4-in input::-webkit-outer-spin-button,
+.ts4-more-opt-panel .var-panel .ts4-in input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ts4-thr-lcl-submit-btn {
+    position: relative;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    border: #24b5ff solid 1px;
+    transition: 0.5s ease-in-out all;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ts4-thr-lcl-submit-btn span {
+    color: #24b5ff;
+    z-index: 22;
+    transition: 0.5s ease-in-out all;
+}
+
+.ts4-thr-lcl-submit-btn:hover {
+    border: transparent 1px solid;
+}
+
+.ts4-thr-lcl-submit-btn:hover span {
+    color: #fff;
+}
+
+.ts4-thr-lcl-submit-btn::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #24b5ff;
+    z-index: -1;
+    left: -100%;
+    top: 0;
+    transition: 0.5s ease-in-out all;
+}
+
+.ts4-thr-lcl-submit-btn:hover::before {
+    left: 0;
+}
+
+.ts4-layout {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0, 1, 0, 0.5);
+    display: none;
+}
+
+.ts4-layout.active {
+    display: block;
+}
+
+.thr-types-opt {
+    display: flex;
+    align-items: center;
+}
+
+.thr-types-opt p {
+    padding: 10px;
+}

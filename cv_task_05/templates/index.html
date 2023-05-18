@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/sift_ncc_cdn.css">
+    <link rel="stylesheet" href="./static/css/t4_thresholding.css">
+    <link rel="stylesheet" href="./static/css/ts5_face_recognition.css">
+    <link rel="shortcut icon" href="./static/imgs/fav_icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Filtering and Edge Detecttion App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <span class="material-symbols-outlined search">search</span>
+            <img src="./static/imgs/pixel.svg" alt="">
+            <span class="material-symbols-outlined toggle-menu">menu</span>
+        </div>
+        <div class="list-menu inactive">
+            <div class="main-list">
+                <p><span>Home</span><span class="material-symbols-outlined active">home</span></p>
+                <p><span>Features</span><span class="material-symbols-outlined">astrophotography_auto</span></p>
+                <p><span>Usage</span><span class="material-symbols-outlined">data_usage</span></p>
+            </div>
+            <div class="extra-list">
+                <p><span>Source Code</span><span class="material-symbols-outlined source-code">code</span></p>
+                <p><span>Report</span><span class="material-symbols-outlined pdf-download">description</span></p>
+            </div>
+        </div>
+        <div class="landing-page">
+            <div class="hero">
+                <p>welcome to <img style="width:100px;" src="./static/imgs/sub.svg" alt=""></p>
+                <h1><span>Do</span> Image Processing <span>and</span> Matching</h1>
+                <h3>Select The Feature You Want To Try</h3>
+                <div class="try-new-btns">
+                    <p class="button">
+                        <span class="s s1"></span>
+                        <span class="s s2"></span>
+                        <span class="s s3"></span>
+                        <span class="s s4"></span>
+                        <span class="material-symbols-outlined">photo_size_select_large</span>
+                        <span>Process Images</span>
+                    <p class="new_features">
+                        <span class="s s1"></span>
+                        <span class="s s2"></span>
+                        <span class="s s3"></span>
+                        <span class="s s4"></span>
+                        <span class="material-symbols-outlined">detection_and_zone</span>
+                        <span>Object Detection</span>
+                    <p class="matching">
+                        <span class="s s1"></span>
+                        <span class="s s2"></span>
+                        <span class="s s3"></span>
+                        <span class="s s4"></span>
+                        <span class="material-symbols-outlined">join_inner</span>
+                        <span>Images Matching</span>
+                    </p>
+                    <p class="t4_image_thresholding">
+                        <span class="s s1"></span>
+                        <span class="s s2"></span>
+                        <span class="s s3"></span>
+                        <span class="s s4"></span>
+                        <span class="material-symbols-outlined">photo_filter</span>
+                        <span>Images Thresho..</span>
+                    </p>
+                    <p class="face_detection">
+                        <span class="s s1"></span>
+                        <span class="s s2"></span>
+                        <span class="s s3"></span>
+                        <span class="s s4"></span>
+                        <span class="material-symbols-outlined">face</span>
+                        <span>face detection</span>
+                    </p>
+                </div>
+            </div>
+            <div class="clk">
+                <p class="time"></p>
+                <p class="day"></p>
+            </div>
+        </div>
+    </div>
+    <div class="description-container">
+        <span class="material-icons close">close</span>
+        <div class="logo">
+            <img src="./static/imgs/pixel.svg" alt="">
+        </div>
+        <div class="description">
+            <h3>Get Accurate Results with <span><img style="width:200px;" src="./static/imgs/sub.svg" alt=""></span>
+            </h3>
+            <p>Pixel is a powerful filtering and edge detection app that provides accurate, reliable results. With
+                sophisticated filtering and edge detection capabilities, Pixel makes it easy to enhance images and
+                extract valuable insights from them. Whether you are a professional or an amateur photographer, Pixel is
+                the perfect tool for extracting important information from your photos.</p>
+        </div>
+        <div class="buttons">
+            <div class="btn">Start processing</div>
+            <div class="btn">Make Hybrid Image</div>
+        </div>
+    </div>
+    <div class="process-image-container act">
+        <div class="bar">
+            <div class="logo-cancel">
+                <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+                <span class="material-icons">close</span>
+            </div>
+            <div class="nav-edit-view">
+                <p class="active"><span class="material-symbols-outlined">panorama</span><span>View Image</span></p>
+                <p class="disabled"><span class="material-symbols-outlined">auto_fix</span><span>Process Image</span>
+                </p>
+            </div>
+        </div>
+        <div class="view-image-container">
+            <div class="img-view">
+                <img src="" alt="">
+                <span class="remove material-icons">close</span>
+                <p>
+                    <span class="material-symbols-outlined">hide_image</span>
+                    <span>No Image Selected</span>
+                </p>
+                <span class="material-icons add">add_photo_alternate</span>
+                <input type="file" hidden>
+            </div>
+            <div class="img-edit-panel inactive">
+                <div class="work-space-img">
+                    <img src="" alt="">
+                    <span class="material-symbols-outlined dwn">cloud_download</span>
+                    <div class="dwn-list-btns">
+                        <span class="material-symbols-outlined">filter_list</span>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="main">
+                        <p value="crnr_detection">
+                            <!-- <span class="material-symbols-outlined">mic_noise_cancel_high</span> -->
+                            <span class="material-symbols-outlined">rounded_corner</span>
+                            <span>Corner Detection</span>
+                        </p>
+                        <p value="add_noise">
+                            <!-- <span class="material-symbols-outlined">mic_noise_cancel_high</span> -->
+                            <span class="material-symbols-outlined">blur_on </span>
+                            <span>Add Noise</span>
+                        </p>
+                        <p value="filter_noise">
+                            <!-- <span class="material-symbols-outlined">mic_noise_cancel_off</span> -->
+                            <span class="material-symbols-outlined"> blur_off </span>
+                            <span>Filter Noise</span>
+                        </p>
+                        <p value="edge_detection"><span
+                                class="material-symbols-outlined">sound_detection_glass_break</span><span>Edge
+                                Detection</span></p>
+                        <p value="analytics"><span
+                                class="material-symbols-outlined">analytics</span><span>Analytics</span>
+                        </p>
+                        <p value="equalizer"><span
+                                class="material-symbols-outlined">equalizer</span><span>Equalizer</span></p>
+                        <p value="normalizer"><span
+                                class="material-symbols-outlined">bar_chart</span><span>Normalizer</span></p>
+                        <p value="thresholding"><span
+                                class="material-symbols-outlined">data_thresholding</span><span>Thresholding</span></p>
+                        <p value="convert_to_grayscale"><span
+                                class="material-symbols-outlined">contrast</span><span>Grayscale</span></p>
+                        <p value="filtering"><span
+                                class="material-symbols-outlined">filter_alt</span><span>Filtering</span></p>
+                    </div>
+                    <div class="main-options">
+                        <p class="header"><span class="material-symbols-outlined">tune</span><span>More Options</span>
+                        </p>
+                        <div class="options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="imgs-list-con">
+            </div>
+        </div>
+    </div>
+    <div class="hybrid-imgs-container">
+        <div class="logo-cancel">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+            <span class="material-icons">close</span>
+        </div>
+        <div class="up-imgs-container">
+            <div class="img img-1">
+                <div class="img-container">
+                    <img src="" alt="">
+                    <span class="remove material-icons">close</span>
+                    <p>
+                        <span class="material-symbols-outlined">hide_image</span>
+                        <span>No Image Selected</span>
+                    </p>
+                    <span class="material-symbols-outlined add">add_photo_alternate</span>
+                    <input type="file" id="img-one" hidden>
+                </div>
+            </div>
+            <div class="img img-2">
+                <div class="img-container">
+                    <img src="" alt="">
+                    <span class="remove material-icons">close</span>
+                    <p>
+                        <span class="material-symbols-outlined">hide_image</span>
+                        <span>No Image Selected</span>
+                    </p>
+                    <span class="material-symbols-outlined add">add_photo_alternate</span>
+                    <input type="file" id="img-two" hidden>
+                </div>
+            </div>
+            <div class="img rslt-img inactive">
+                <div class="img-container">
+                    <img src="./static/test/hasdwwqdsad_minecraft_622663c9-f5a3-4bf5-8d50-350f0d4a2ef8.png" alt="">
+                    <span class=" material-symbols-outlined dwnld dwn">cloud_download</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="control-btns">
+            <p class="inactive"><span class="material-symbols-outlined">clear_all</span><span>Clear All</span></p>
+            <p class="inactive"><span class="material-symbols-outlined">cell_merge</span><span>Combine</span></p>
+        </div>
+    </div>
+    <div class="loader-rgn ">
+        <div class="loader">
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+        </div>
+        <p>Processing...</p>
+    </div>
+    <div class="graphs-menu">
+        <p value="grayscale" class="active"><span>G</span><span>Grayscale</span></p>
+        <p value="redscale"><span>R</span><span>Redscale</span></p>
+        <p value="greenscale"><span>G</span><span>Greenscale</span></p>
+        <p value="bluescale"><span>B</span><span>Bluescale</span></p>
+    </div>
+    <div class="analytics inactive">
+        <span class="material-symbols-outlined cls">close</span>
+        <div class="graph histo inactive">
+            <h1>Histogram</h1>
+            <div class="graph" id="histogram">
+            </div>
+        </div>
+        <div class="graph dis_graph inactive">
+            <h1>Distribution Curve</h1>
+            <div class="graph" id="distrobution_graph"></div>
+        </div>
+        <span class="material-symbols-outlined grph_btn">ssid_chart</span>
+    </div>
+    <div class="cml-eq-diagrams inactive">
+        <span class="material-symbols-outlined cls">close</span>
+        <div class="grf eq inactive">
+            <h1>Equalization Histogram</h1>
+            <div class="grf" id="eq-histogram"></div>
+        </div>
+        <div class="grf cml">
+            <h1>Cumulative Curve</h1>
+            <div class="grf" id="cml-curve"></div>
+        </div>
+    </div>
+    <div class="snake-cont-det">
+        <span class="material-symbols-outlined cls">close</span>
+        <span class="material-symbols-outlined bk">reply</span>
+        <div class="logo">
+            <img src="./static/imgs/pixel.svg" alt="">
+        </div>
+        <div class="description active">
+            <h1>select features and some shapes in your image</h1>
+            <p>You can apply Hough transform for detecting parametric shapes like circles and lines, and you can apply
+                Active Contour Model for semi-supervised shape delineation.</p>
+            <div class="act-btns">
+                <p value="hough_transform">Apply Hough Transform</p>
+                <p value="active_contour_model">Apply Active Contour Model</p>
+            </div>
+        </div>
+        <div class="image-test">
+            <h1>Choose an image to TEST</h1>
+            <p class="t"></p>
+            <div class="imgs-container-test">
+            </div>
+            <div class="try-btn">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="hf-cont">
+        <span class="material-symbols-outlined cls-hf-btn">close</span>
+        <span class="material-symbols-outlined bk-hf-btn">reply</span>
+        <div class="logo">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="">
+        </div>
+        <div class="img-info-cont">
+            <div class="img-cont">
+                <img src="" alt="">
+            </div>
+            <div class="img-info">
+                <h1>Image Information</h1>
+                <p class="inf"><span>This image is generated with &beta;=0.3, &alpha;=20 and radius of 350px with 500
+                        iterations.</span></p>
+                <div class="dd">
+                    <p class="dwn-img"><span>Download</span><span class="material-symbols-outlined">download</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hf-cont-setting">
+        <span class="material-symbols-outlined cls-hf-st-btn">close</span>
+        <div class="logo">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="">
+        </div>
+        <div class="img-pre-set">
+            <div class="img-prev">
+                <img src="" alt="">
+            </div>
+            <div class="img-set">
+                <div class="opt">
+                    <h1>Options</h1>
+                    <div class="opt-d">
+                        <p value="detect_line"><span class="material-symbols-outlined">pen_size_1</span><span>Detect
+                                Line</span></p>
+                        <p value="detect_circle"><span class="material-symbols-outlined">circle</span><span>Detect
+                                Circle</span></p>
+                        <p value="detect_ellipse"><span class="material-symbols-outlined">shape_line</span><span>
+                                Detect Ellipse</span></p>
+                    </div>
+                </div>
+                <div class="s">
+                    <h1>Settings</h1>
+                    <div class="list-set">
+                    </div>
+                </div>
+                <div class="stt">
+                    <p class="st-pr-btn inactive"><span>Start Processing</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ssd-ncc-dex">
+        <div class="ssd-bar">
+            <span class="material-symbols-outlined ssd-cls">close</span>
+            <img src="./static/imgs/pixel.svg" alt="">
+        </div>
+        <h1>Image Matching <span>with</span> <img src="./static/imgs/sub.svg" alt=""></h1>
+        <p>Pixel is a website that offers image matching services using advanced algorithms like Scale-Invariant Feature
+            Transform (SIFT), Sum of Squared Differences (SSD), and Normalized Cross-Correlation (NCC). These algorithms
+            can detect and match similar features in different images, which can be useful in a variety of applications
+            such as plagiarism detection, copyright infringement, and image retrieval.</p>
+        <p class="ssd-try-btn"><span>Try Now</span></p>
+    </div>
+    <div class="ssd-ncc-op-window">
+        <div class="bar">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+            <span class="material-symbols-outlined ssd-op-cls-btn">close</span>
+            <span class="material-symbols-outlined pro-sub-opn-btn">developer_board</span>
+        </div>
+        <div class="ssd-imgs-container">
+            <div class="image img-s1">
+                <div class="img-container">
+                    <img src="./static/test/ell.png" alt="">
+                    <span class="rmv-sc-btn material-icons">close</span>
+                    <p>
+                        <span class="material-symbols-outlined">hide_image</span>
+                        <span>No Image Selected</span>
+                    </p>
+                    <span class="material-symbols-outlined upld-img-ssd">add_photo_alternate</span>
+                    <input type="file" id="ssd-img-one" hidden>
+                </div>
+            </div>
+            <div class="image img-s2">
+                <div class="img-container">
+                    <img src="./static/test/ccc.png" alt="">
+                    <span class="rmv-sc-btn material-icons">close</span>
+                    <p>
+                        <span class="material-symbols-outlined">hide_image</span>
+                        <span>No Image Selected</span>
+                    </p>
+                    <span class="material-symbols-outlined upld-img-ssd">add_photo_alternate</span>
+                    <input type="file" id="ssd-img-two" hidden>
+                </div>
+            </div>
+        </div>
+        <div class="ssd-submit">
+            <div class="hd">
+                <span class="material-symbols-outlined pro-sub-cls-btn">developer_board_off</span>
+                <img style="width:100px;" src="./static/imgs/sub.svg" alt="">
+            </div>
+            <p class="ch-ssd">Choose The Methode To use for matching</p>
+            <div class="type-matching">
+                <span class="active" value="ssd">SSD Method</span>
+                <span value="ncc">NCC Method</span>
+            </div>
+            <div class="ssd-threshold">
+                <div class="th-input-ssd">
+                    <input type="number" name="ssd-threshold" id="ssd-threshold">
+                    <span>Threshold</span>
+                </div>
+                <div class="th-rcmd">
+                    <span>Recommendation</span>
+                    <span>To get good results of using NCC method, you can use a threshold between 0 and 0.99 as the
+                        more reaches 0.99 the better results you get. But to
+                        get
+                        good results of using SSD method it's prefered to use a threshold between 1000 and 10000 as the
+                        more reaches 10000 the better results you get.</span>
+                </div>
+            </div>
+            <p class="st-prs"><span>Process</span></p>
+        </div>
+    </div>
+    <div class="ssd_rslt-window">
+        <div class="rslt-bar">
+            <img style="width:200px" src="./static/imgs/sub.svg" alt="">
+            <span class="material-symbols-outlined cls-rslt-window">close</span>
+            <span class="material-symbols-outlined back-to-ssd-window">first_page</span>
+        </div>
+        <div class="ris-img"><img
+                src="./static/test/Cronocrusher_realistic_anthro_avian_warrior_6de68b67-5c53-4754-9679-f45d9ac88e78.png"
+                alt=""></div>
+        <div class="comp-time">
+            <h3>computation time</h3>
+            <div class="si-ty-in">
+                <p class="sift"><span>SIFT</span><span>50 <i>sec</i></span></p>
+                <p class="type"><span>NCC</span><span>1111111 <i>sec</i></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="ts4-dex">
+        <div class="ts4-bar">
+            <span class="material-symbols-outlined ts4-cls">close</span>
+            <img src="./static/imgs/pixel.svg" alt="">
+        </div>
+        <h1>Image Thresholding <span>with</span> <img src="./static/imgs/sub.svg" alt=""></h1>
+        <p>Pixel is a comprehensive website that offers a range of powerful image processing tools, including advanced
+            thresholding and segmentation techniques. With Pixel, users can quickly and easily process grayscale and
+            color images, and apply a variety of thresholding and segmentation algorithms to extract important
+            information from their images.</p>
+        <p class="ts4-try-btn"><span>Try Now</span></p>
+    </div>
+    <div class="ts4-op-window">
+        <div class="ts4-op-tab">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+            <span class="material-symbols-outlined ts4-op-cls-btn">close</span>
+        </div>
+        <div class="ts4-op-container">
+            <div class="ts4-workspace">
+                <img src="" alt="">
+                <span class="material-symbols-outlined ts4-img-rmv-btn">close</span>
+                <p>
+                    <span class="material-symbols-outlined">hide_image</span>
+                    <span>No Image Selected</span>
+                </p>
+                <span class="material-symbols-outlined ts4-upld-btn active">backup</span>
+                <span class="material-symbols-outlined ts4-dnld-btn">cloud_download</span>
+                <input type="file" class="ts4-file" hidden>
+            </div>
+            <div class="ts4-panel">
+                <div class="ts4-main-panel">
+                    <p value="otsu_thresholding">
+                        <span class="material-symbols-outlined">contrast_rtl_off</span>
+                        <span>Otsu's Thresholding</span>
+                    </p>
+                    <p value="optimal_thresholding">
+                        <span class="material-symbols-outlined">low_density</span>
+                        <span>Optimal Thresholding</span>
+                    </p>
+                    <p value="spectral_thresholding_mod">
+                        <span class="material-symbols-outlined">line_weight</span>
+                        <span>Spectral Thresholding</span>
+                    </p>
+                    <p value="local_thresholding">
+                        <span class="material-symbols-outlined">park</span>
+                        <span>Local Thresholding</span>
+                    </p>
+                    <p value="region_growing">
+                        <span class="material-symbols-outlined">landslide</span>
+                        <span>Region Grwoing</span>
+                    </p>
+                    <p value="agglomerative_clustring">
+                        <span class="material-symbols-outlined">all_inclusive</span>
+                        <span>Agglomerative Clustring</span>
+                    </p>
+                    <p value="k_mean_segmentation">
+                        <span class="material-symbols-outlined">dirty_lens</span>
+                        <span>K means clustering</span>
+                    </p>
+                    <p value="mean_shift_segmentation">
+                        <span class="material-symbols-outlined">filter_tilt_shift</span>
+                        <span>mean shift clustering</span>
+                    </p>
+                    <p value="rgb_luv">
+                        <span class="material-symbols-outlined">format_paint</span>
+                        <span>RGB LUV</span>
+                    </p>
+                </div>
+                <div class="ts4-more-opt-panel">
+                </div>
+            </div>
+            <div class="ts4-layout"></div>
+        </div>
+    </div>
+    <div class="error-window">
+        <span class="material-symbols-outlined error-cls">close</span>
+        <span class="material-symbols-outlined err-ic">warning</span>
+        <p>Something went wrong!</p>
+    </div>
+    <div class="unknown-window">
+        <span class="material-symbols-outlined unf-cls">close</span>
+        <span class="material-symbols-outlined err-ic">no_accounts</span>
+        <p>Unknown Face!</p>
+    </div>
+    <div class="face-detection-dex">
+        <div class="ts5-bar">
+            <span class="material-symbols-outlined ts5-cls">close</span>
+            <img src="./static/imgs/pixel.svg" alt="">
+        </div>
+        <h1>face detection & recognition <span>with</span> <img src="./static/imgs/sub.svg" alt=""></h1>
+        <p>Pixel is a website that uses face recognition technology based on Principal
+            Component Analysis (PCA) and Eigen analysis. It identifies and analyzes faces in images. The website is
+            user-friendly and easy to use, with powerful algorithms that make it a valuable tool for a variety of
+            applications. With Pixel, users can improve their understanding of the unique characteristics of the human
+            face.</p>
+        <p class="ts5-try-btn"><span>Try Now</span></p>
+    </div>
+    <div class="ts5-op-window in-op">
+        <div class="ts5-op-tab">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+            <span class="material-symbols-outlined ts5-op-cls-btn">close</span>
+        </div>
+        <div class="ts5-op-container">
+            <div class="ts5-workspace ts5-ws-01">
+                <img src="" alt="">
+                <span class="material-symbols-outlined ts5-img-rmv-btn">close</span>
+                <p>
+                    <span class="material-symbols-outlined">hide_image</span>
+                    <span>No Image Selected</span>
+                </p>
+                <span class="material-symbols-outlined ts5-upld-btn">backup</span>
+                <span class="material-symbols-outlined t5-show-sub-wind">preview</span>
+                <input type="file" class="ts5-file" hidden>
+                <div class="prc-str">
+                    <span class="material-symbols-outlined prc-ts5-cls">keyboard_double_arrow_down</span>
+                    <span class="material-symbols-outlined ts5-str">memory</span>
+                    <div class="t5-threshold">
+                        <div class="t5-thre-input">
+                            <label for="t5-thr-input">Threshold</label>
+                            <input type="number" id="t5-thr-input" value="27000000">
+                        </div>
+                        <span>Please enter a huge number, ex: 27000000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ts5-workspace ts5-ws-02  in-op">
+                <img src="" alt="">
+                <div class="t5-img-info">
+                    <span class="t5-name">Person's Name</span>
+                    <span class="t5-stat">Matched</span>
+                </div>
+                <span class="material-symbols-outlined mdl-prf">query_stats</span>
+            </div>
+        </div>
+    </div>
+    <div class="ts5-fd-window in-op ">
+        <div class="ts5-fd-tab">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+            <span class="material-symbols-outlined ts5-fd-cls-btn">close</span>
+        </div>
+        <div class="ts5-fd-container">
+            <div class="ts5-fd-workspace ts5-fd-01">
+                <img src="" alt="">
+                <span class="material-symbols-outlined ts5-fd-img-rmv-btn">close</span>
+                <p>
+                    <span class="material-symbols-outlined">hide_image</span>
+                    <span>No Image Selected</span>
+                </p>
+                <span class="material-symbols-outlined ts5-fd-upld-btn">backup</span>
+                <span class="material-symbols-outlined t5-fd-show-sub-wind">preview</span>
+                <input type="file" class="ts5-fd-file" hidden>
+                <div class="prc-str-fd">
+                    <span class="material-symbols-outlined prc-fd-ts5-cls">keyboard_double_arrow_down</span>
+                    <span class="material-symbols-outlined ts5-fd-str">memory</span>
+                </div>
+            </div>
+            <div class="ts5-fd-workspace ts5-fd-02 in-op ">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="face-rec-btns">
+        <p value="tf-face-recognition" class="active">
+            <span class="material-symbols-outlined">detection_and_zone</span>
+            <span class="tt-val">Face Recognition</span>
+        </p>
+        <p value="tf-face-detection">
+            <span class="material-symbols-outlined">nest_detect</span>
+            <span class="tt-val">Face Detection</span>
+        </p>
+    </div>
+    <div class="roc-com_matrix-cont">
+        <div class="ts5-roc-tab">
+            <img style="width:200px;" src="./static/imgs/sub.svg" alt="logo">
+            <span class="material-symbols-outlined ts5-roc-cls-btn">close</span>
+        </div>
+        <div class="roc-imgs-container">
+            <div class="rm-img roc-img">
+                <p>ROC Curve</p>
+                <div class="rm-img-cnt">
+                    <img src="./static/download/edit/307570501607530_roc_img.png">
+                </div>
+            </div>
+            <!-- <div class="rm-img cm-img">
+                <p>Confusion Matrix</p>
+                <div class="rm-img-cnt">
+                    <img src="">
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+    <script src="./static/js/script.js"></script>
+    <script src="./static/js/sift_ncc_sdn.js"></script>
+    <script src="./static/js/t4_thresholding.js"></script>
+    <script src="./static/js/t5_face_recognition.js"></script>
+</body>
+
+</html>

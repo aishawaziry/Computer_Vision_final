@@ -1,0 +1,425 @@
+.ts5-op-window.in-op,
+.ts5-fd-window.in-op {
+    width: 390px;
+    overflow: hidden;
+}
+
+.ts5-op-window,
+.ts5-fd-window {
+    width: 770px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out all;
+}
+
+.ts5-op-container,
+.ts5-fd-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.ts5-workspace,
+.ts5-fd-workspace {
+    width: 370px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1px #000; */
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace p,
+.ts5-fd-workspace p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str,
+.prc-str-fd {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 1, 0, 0.5);
+    backdrop-filter: blur(15px);
+    bottom: -100%;
+    transition: 0.5s ease-in-out all;
+    flex-direction: column;
+}
+
+.t5-threshold {
+    padding: 10px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.t5-thre-input {
+    position: relative;
+    height: 30px;
+}
+
+.t5-threshold span {
+    font-size: 12px;
+    color: #24b5ff;
+}
+
+.t5-thre-input label {
+    position: absolute;
+    color: #24b5ff;
+    font-size: 12px;
+    top: -15px;
+    font-weight: 500;
+}
+
+.t5-thre-input input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #24b5ff;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.5s ease-in-out all;
+}
+
+.t5-thre-input input::-webkit-outer-spin-button,
+.t5-thre-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.t5-thre-input input:focus {
+    border-bottom: #24b5ff solid 1px;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str.active,
+.prc-str-fd.active {
+    bottom: 0;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str .prc-ts5-cls,
+.prc-fd-ts5-cls {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    font-size: 30px;
+    color: #24b5ff;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s ease-in-out all;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str .prc-ts5-cls:hover,
+.prc-fd-ts5-cls:hover {
+    opacity: 1;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str .ts5-str,
+.ts5-fd-str {
+    font-size: 150px;
+    border: #24b5ff solid 1px;
+    padding: 20px;
+    border-radius: 50%;
+    color: #24b5ff;
+    transition: 0.5s ease-in-out all;
+    cursor: pointer;
+    position: relative;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str .ts5-str:hover,
+.ts5-fd-str:hover {
+    color: #fff;
+    font-weight: 1000px;
+    border: transparent 1px solid;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str .ts5-str::before,
+.ts5-fd-str::before {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 0%;
+    background: #24b5ff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: 0.5s ease-in-out all;
+
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .prc-str .ts5-str:hover:before,
+.ts5-fd-str:hover::before {
+    width: 70%;
+    height: 70%;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace p span:first-child,
+.ts5-fd-workspace p span:first-child {
+    font-size: 70px;
+    color: #24b5ff;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace p span:last-child,
+.ts5-fd-workspace p span:last-child {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #24b5ff;
+}
+
+.t5-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace img,
+.ts5-fd-workspace img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.ts5-workspace.in-op,
+.ts5-fd-workspace.in-op {
+    display: none;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace img.active,
+.ts5-fd-workspace img.active {
+    display: block;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-img-rmv-btn,
+.ts5-fd-workspace .ts5-fd-img-rmv-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 25px;
+    padding: 10px;
+    color: #24b5ff;
+    transition: 0.5s ease-in-out all;
+    cursor: pointer;
+    display: none;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-img-rmv-btn.active,
+.ts5-fd-img-rmv-btn.active {
+    display: block;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-dnld-btn:hover,
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-upld-btn:hover,
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-img-rmv-btn:hover,
+.ts5-fd-img-rmv-btn:hover,
+.ts5-fd-upld-btn:hover {
+    color: #fff;
+    background: #24b5ff;
+}
+
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-dnld-btn,
+.ts5-op-window .ts5-op-container .ts5-workspace .ts5-upld-btn,
+.ts5-fd-upld-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #24b5ff;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out all;
+}
+
+.t5-show-sub-wind,
+.t5-fd-show-sub-wind {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: #24b5ff;
+    cursor: pointer;
+    font-size: 25px;
+    transition: 0.5s ease-in-out all;
+    display: none;
+}
+
+.t5-show-sub-wind.active,
+.t5-fd-show-sub-wind.active {
+    display: block;
+}
+
+.t5-show-sub-wind:hover,
+.t5-fd-show-sub-wind:hover {
+    color: #fff;
+    background: #24b5ff;
+}
+
+.t5-img-info {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    background: rgba(0, 1, 0, 0.5);
+    backdrop-filter: blur(15px);
+    font-weight: 400;
+    font-size: 20px;
+    pointer-events: none;
+    bottom: -50%;
+    transition: 0.5s ease-in-out all;
+}
+
+.ts5-workspace.ts5-ws-02:hover .t5-img-info {
+    bottom: 0;
+}
+
+.ts5-workspace.ts5-ws-02 {
+    cursor: pointer;
+}
+
+.t5-img-info .t5-name {
+    color: #24b5ff;
+}
+
+.t5-img-info .t5-stat {
+    color: rgb(137, 11, 11);
+    font-weight: 900;
+}
+
+.face-rec-btns {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    flex-direction: column;
+}
+
+.face-rec-btns.active {
+    display: flex;
+}
+
+.face-rec-btns p span:first-child {
+    font-size: 25px;
+    padding: 20px;
+    color: #24b5ff;
+    color: #fff;
+    transition: 0.5s ease-in-out all;
+}
+
+.face-rec-btns p {
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s ease-in-out all;
+}
+
+
+.face-rec-btns p.active span:first-child {
+    color: #fff;
+    background: #24b5ff;
+}
+
+.face-rec-btns p span:last-child {
+    position: absolute;
+    left: -140px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    background: #24b5ff;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+
+.face-rec-btns p:hover span:last-child {
+    opacity: 1;
+}
+
+.face-rec-btns p span:last-child::before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 35px;
+    background: #24b5ff;
+    transform: rotate(45deg) translateY(-50%);
+    right: -5px;
+    top: 50%;
+    z-index: -1;
+}
+
+/* .roc-com_matrix-cont {
+    width: 770px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out all;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+} */
+.roc-com_matrix-cont {
+    width: 420px;
+}
+
+.roc-com_matrix-cont.active {
+    display: block;
+}
+
+.roc-imgs-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.roc-imgs-container .rm-img {
+    height: 400px;
+    width: 400px;
+    text-align: center;
+}
+
+.roc-imgs-container .rm-img p {
+    text-transform: uppercase;
+    color: #24b5ff;
+}
+
+.rm-img-cnt {
+    height: 375px;
+    position: relative;
+}
+
+.rm-img-cnt img {
+    width: 100%;
+    height: 100%;
+}
+
+span.mdl-prf {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 25px;
+    color: #24b5ff;
+    transition: 0.5s ease-in-out all;
+    cursor: pointer;
+}
+
+span.mdl-prf:hover {
+    background: #24b5ff;
+    color: #fff;
+}
